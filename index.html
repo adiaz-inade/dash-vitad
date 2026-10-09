@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Tableros Vitad</title>
+<link rel="icon" href="favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+:root{--bg:#f4f7f8;--surface:#fff;--line:#d9e2e5;--ink:#101820;--muted:#5b6670;--accent:#00879B;--accent-2:#00BED6;
+--accent-ink:#fff;--soft:#e3f5f8;--bad:#b42318;--logo:url("logo_vitad_oscuro.png");color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#0c1418;--surface:#131f25;--line:#26363e;--ink:#e8eef0;--muted:#94a3ab;
+--accent:#22c3d9;--accent-2:#00BED6;--accent-ink:#04191d;--soft:#12313a;--bad:#f07a70;--logo:url("logo_vitad_claro.png");color-scheme:dark}}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Sans 3","Segoe UI",system-ui,sans-serif;font-size:16px;line-height:1.45;min-height:100vh;display:flex;flex-direction:column}
+body::before{content:"";display:block;height:6px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+.logo{display:block;width:150px;height:51px;background:var(--logo) no-repeat left center/contain}
+h1,h2{font-family:"Archivo","Segoe UI",system-ui,sans-serif;letter-spacing:-.01em;margin:0}
+a{color:var(--accent)}
+footer{margin-top:auto;padding:20px 16px;text-align:center;color:var(--muted);font-size:.82rem}
+
+main{width:min(880px,100%);margin:0 auto;padding:40px 16px 24px}
+header{display:flex;flex-direction:column;gap:22px;margin-bottom:28px}
+header h1{font-size:1.9rem}header p{margin:6px 0 0;color:var(--muted)}.ses{font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s,box-shadow .15s}
+a.card:hover,a.card:focus-visible{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,60,70,.10);outline:none}
+.card h2{font-size:1.25rem}.card p{margin:0;color:var(--muted);font-size:.95rem}
+.card .pie{margin-top:auto;padding-top:10px;display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.85rem;color:var(--muted)}
+.card .ir{font-weight:600;color:var(--accent);white-space:nowrap}
+.card.off{opacity:.62}.card .tag{background:var(--soft);color:var(--accent);border-radius:99px;padding:2px 10px;font-weight:600;font-size:.8rem}
+.card .top{display:flex;justify-content:space-between;align-items:center}.tag.tmp{background:transparent;border:1px solid var(--line);color:var(--muted)}
+.ico{width:40px;height:40px;border-radius:10px;background:var(--soft);display:grid;place-items:center}
+.ico svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style></head><body>
+<main>
+<header><span class="logo" role="img" aria-label="Vitad"></span>
+<div><h1>Tableros</h1><p>Uso interno de Vitad y Alquería. Entre con su usuario y su clave.</p><p class="ses" id="ses" hidden>Sesión abierta: <b id="sesU"></b> · <a href="#" id="salir">Salir</a></p></div></header>
+<div class="grid"><a class="card" href="comercial/"><div class="top"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span></div><h2>Tablero comercial</h2><p>Sell-in, sellout e inventario en punto de venta, por cadena, tienda y producto.</p><div class="pie"><span>Datos hasta 4-oct-2026</span><span class="ir">Entrar →</span></div></a><a class="card" href="rentabilidad/"><div class="top"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span></div><h2>Seguimiento rentabilidad</h2><p>Rentabilidad por cliente, canal y producto.</p><div class="pie"><span></span><span class="ir">Entrar →</span></div></a><a class="card" href="piloto-tt/"><div class="top"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10l2-6h14l2 6"/><path d="M4 10v10h16V10"/><path d="M9 20v-6h6v6"/></svg></span><span class="tag tmp">Temporal</span></div><h2>Piloto tienda a tienda</h2><p>Papas, platanitos y tachos de 30-35 g en tiendas de Bogotá y Cali: venta, mueble, recompra y cargue.</p><div class="pie"><span>Datos hasta 8-oct-2026</span><span class="ir">Entrar →</span></div></a><div class="card off" aria-disabled="true"><div class="top"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><span class="tag tmp">Temporal</span></div><h2>2x1 OXXO</h2><p>Seguimiento de la promoción 2x1 en OXXO.</p><div class="pie"><span class="tag">Próximamente</span></div></div></div>
+</main>
+<footer>Vitad · INADE S.A.S.</footer>
+<script>
+const K="vitad_acceso";let s=null;
+try{s=JSON.parse(sessionStorage.getItem(K)||localStorage.getItem(K)||"null")}catch(e){}
+if(s&&s.u){document.getElementById("sesU").textContent=s.u;document.getElementById("ses").hidden=false;}
+document.getElementById("salir").addEventListener("click",e=>{e.preventDefault();try{sessionStorage.removeItem(K);localStorage.removeItem(K)}catch(_){}location.reload();});
+</script>
+</body></html>
